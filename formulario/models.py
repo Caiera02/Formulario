@@ -13,7 +13,10 @@ class Colaborador(models.Model):
 class Avaliacao(models.Model):
     colaborador = models.ForeignKey(Colaborador, on_delete=models.CASCADE)
     criterio = models.CharField(max_length=100)
-    nota = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
+    nota = models.IntegerField(choices=[(i, i) for i in range(1, 6)])# Fazer aparecer apenas de 1 a 5
+    
+    class Meta:
+        unique_together = ('colaborador', 'criterio') 
 
-    def __str__(self):
-        return f"{self.colaborador.nome} - {self.criterio}: {self.nota}"
+    # def __str__(self):
+    #     return f"{self.colaborador.nome} - {self.criterio}: {self.nota}"

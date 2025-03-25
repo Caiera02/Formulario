@@ -8,7 +8,7 @@ class ColaboradorAdmin(admin.ModelAdmin):
 
 @admin.register(Avaliacao)
 class AvaliacaoAdmin(admin.ModelAdmin):
-    list_display=('colaborador','criterio',)
+    list_display=('colaborador','criterio','nota',)
 
 
         

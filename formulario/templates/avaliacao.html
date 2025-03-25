@@ -18,7 +18,12 @@
                             <select name="nota_{{ colaborador.id }}_{{ criterio }}">
                                 <option value="">Selecione</option>
                                 {% for i in "12345" %}
-                                    <option value="{{ i }}" {% for a in avaliacoes %}{% if a.colaborador.id == colaborador.id and a.criterio == criterio and a.nota == i|add:0 %}selected{% endif %}{% endfor %}>{{ i }}</option>
+                                    <option value="{{ i }}" 
+                                    {% for a in avaliacoes %}
+                                        {% if a.colaborador.id == colaborador.id and a.criterio == criterio and a.nota == i|add:0 %}
+                                            selected
+                                        {% endif %}
+                                    {% endfor %}>{{ i }}</option>
                                 {% endfor %}
                             </select>
                         </td>
