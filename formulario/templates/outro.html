@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaliação</title>
+  </head>
+  <body>
+    <form method="POST">
+      {% csrf_token %}
+      <table border="1">
+
+        <thead>
+          <tr>
+            <th>Critério</th>
+            {% for colaborador in colaboradores %}
+              <th>{{ colaborador.nome }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for criterio in criterios %}
+            <tr>
+              <td>{{ criterio.nome }}</td>
+              {% for colaborador in colaboradores %}
+                <td>
+                  <select>
+                    {% comment %} {% for nota in notas %} {% endcomment %}
+                    <option value="1"> 1</option>
+                    <option value="2"> 2</option>
+                    {% comment %} {% endfor %} {% endcomment %}
+                  </select>
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <button type="submit">Salvar Avaliação</button>
+    </form>
+  </body>
+</html>

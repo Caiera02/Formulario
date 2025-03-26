@@ -1,36 +1,14 @@
-<form method="POST">
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Critério</th>
-                {% for colaborador in colaboradores %}
-                    <th>{{ colaborador.nome }}</th>
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for criterio in criterios %}
-                <tr>
-                    <td>{{ criterio }}</td>
-                    {% for colaborador in colaboradores %}
-                        <td>
-                            <select name="nota_{{ colaborador.id }}_{{ criterio }}">
-                                <option value="">Selecione</option>
-                                {% for i in "12345" %}
-                                    <option value="{{ i }}" 
-                                    {% for a in avaliacoes %}
-                                        {% if a.colaborador.id == colaborador.id and a.criterio == criterio and a.nota == i|add:0 %}
-                                            selected
-                                        {% endif %}
-                                    {% endfor %}>{{ i }}</option>
-                                {% endfor %}
-                            </select>
-                        </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        </tbody>
+    <table>
+      {{ new_formulario.as_table }}
+
+      {% for criterios in crit %}
+        <p>{{ criterios.nome }}</p>
+      {% endfor %} 
     </table>
-    <button type="submit">Salvar</button>
-</form>
+
+    <input type="submit" value="Salvar Avaliação">
+  </form>
+{% endblock %}
