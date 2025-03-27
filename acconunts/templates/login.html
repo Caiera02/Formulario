@@ -1,0 +1,19 @@
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+<div class="form-group">
+    <label for="">Usuario</label>
+    {{form.username}}
+</div>
+
+<div class="form-group">
+    <label for="">senha</label>
+    {{form.password}}
+</div>
+
+<div class="form-group">
+    <input type="submit" value="Login"->
+</div>
+        {% comment %} {{ form.as_p}} {% endcomment %}
+  </form>
+{% endblock %}

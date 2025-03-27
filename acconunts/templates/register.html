@@ -1,0 +1,22 @@
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {{user_form.username.errors}}
+      <label for="">Usuario</label>
+      {{ user_form.username }}
+
+      {{user_form.password1.errors}}
+      <label for="">Senha</label>
+      {{ user_form.password1 }}
+    
+      {{user_form.password2.errors}}
+      <label for="">Confirmação deSenha</label>
+      {{ user_form.password2 }}
+      <div class="form-group">
+        <input type="submit" value="Cadastrar" />
+      </div>
+    </div>
+    {% comment %} {{ user_form.as_p }} {% endcomment %}
+  </form>
+{% endblock %}
