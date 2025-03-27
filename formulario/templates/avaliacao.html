@@ -1,14 +1,17 @@
+{% load static %}
+
 {% block content %}
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-      {{ new_formulario.as_table }}
-
-      {% for criterios in crit %}
-        <p>{{ criterios.nome }}</p>
-      {% endfor %} 
-    </table>
-
-    <input type="submit" value="Salvar Avaliação">
-  </form>
+  <html lang="pt-br">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" type="text/css" href="{% static 'CSS/forms.css' %}" />
+      <title>Formulario</title>
+    </head>
+    <body>
+      <h1>Olá, {{user.username}}</h1>
+      {{new_formulario.as_table}}
+      <input type="submit" value="Salvar avaliação">
+    </body>
+  </html>
 {% endblock %}
