@@ -1,0 +1,62 @@
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e3f2fd; /* Azul claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilizando o formulário */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    color: #1565c0; /* Azul escuro */
+    margin-bottom: 20px;
+}
+
+/* Campos de entrada */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #90caf9;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Botão de login */
+input[type="submit"] {
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0d47a1; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Melhorando a tabela de login_form */
+table {
+    width: 100%;
+}
+
+td {
+    padding: 5px;
+}
