@@ -1,8 +1,6 @@
-from django.forms import modelformset_factory
 from django.shortcuts import render, redirect
 from formulario.forms import AvaliacaoModelForm
 from formulario.models import Criterio, Colaborador, Avaliacao
-
 
 def avaliacao_view(request):
     
