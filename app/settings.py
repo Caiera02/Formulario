@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'formulario',
     'acconunts',
+    'ra',
 ]
 
 MIDDLEWARE = [
