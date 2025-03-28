@@ -1,8 +1,20 @@
-{% block content %}
-  <form method="post">
-    {% csrf_token %}
+{% load static %}
 
-    {{ login_form.as_table }}
-    <input type="submit" value="Login"/>
-  </form>
+{% block content %}
+  <html lang="pt-br">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" type="text/css" href="{% static 'CSS/forms.css' %}" />
+      <title>Formulario</title>
+    </head>
+    <body>
+      <form method="post">
+        {% csrf_token %}
+        <h1>Login</h1>
+        {{ login_form.as_table }}
+        <input type="submit" value="Login" />
+      </form>
+    </body>
+  </html>
 {% endblock %}

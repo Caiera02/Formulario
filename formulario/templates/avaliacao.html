@@ -9,9 +9,15 @@
       <title>Formulario</title>
     </head>
     <body>
-      <h1>Olá, {{user.username}}</h1>
-      {{new_formulario.as_table}}
-      <input type="submit" value="Salvar avaliação">
+      <form method="post">
+        {% csrf_token %}
+        <h1>Olá, {{ user.username }}</h1>
+        {{ new_formulario.as_table }}
+        <input type="submit" value="Salvar avaliação" />
+        {% if user.is_authenticated %}
+          <h1><a href="{% url 'lougt' %}">SAIR</a></h1>
+        {% endif %}
+      </form>
     </body>
   </html>
 {% endblock %}
